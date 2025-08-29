@@ -1,0 +1,42 @@
+###############################################################################################################################
+##  Version 0.1.1                                                                                                            ##
+##  In total: 7 AWS Services, 23 IAM actions, NA risk                                                                        ##   
+##                                                                                                                           ## 
+##  To-do list for additional services:                                                                                      ##
+##  https://github.com/ZiyadAlmbasher/iam-dangerous-actions/issues?q=state%3Aopen%20label%3A%22Services-to-add%22            ##
+##                                                                                                                           ##       
+##  Risk Label:                                                                                                              ##           
+##  NA = Not Applicable. The action will be dangerous when combined with other IAM actions                                   ##                                                                                                ##   
+##                                                                                                                           ##   
+############################################################################################################################### 
+
+
+"iam:CreateGroup": NA
+"iam:CreateVirtualMFADevice": NA 
+"iam:EnableMFADevice": NA 
+"iam:UploadSSHPublicKey": NA
+
+"sso-directory:CreateGroup": NA
+"sso-directory:StartVirtualMfaDeviceRegistration": NA
+"sso-directory:StartWebAuthnDeviceRegistration": NA
+
+"lambda:CreateFunction": NA
+"lambda:PublishVersion": NA
+
+"s3:CreateAccessGrantsInstance": NA
+"s3:CreateAccessGrantsLocation": NA
+"s3:CreateAccessPoint": NA
+"s3:CreateMultiRegionAccessPoint": NA 
+"s3:PutInventoryConfiguration": NA
+
+"cloudfront:CreateCloudFrontOriginAccessIdentity": NA
+"cloudfront:CreateConnectionGroup": NA
+"cloudfront:CreateDistributionTenant": NA
+"cloudfront:CreateFieldLevelEncryptionProfile": NA 
+"cloudfront:CreateOriginRequestPolicy": NA
+"cloudfront:CreatePublicKey": NA
+
+"route53:CreateHostedZone": NA
+
+"kms:GenerateDataKey": NA
+"kms:GenerateDataKeyPair": NA

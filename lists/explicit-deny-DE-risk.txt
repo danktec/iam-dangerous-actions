@@ -1,0 +1,102 @@
+###############################################################################################################################
+##  Version 0.1.1                                                                                                            ##
+##  In total: 10 AWS Services, 73 IAM actions, DE risk                                                                       ##   
+##                                                                                                                           ## 
+##  To-do list for additional services:                                                                                      ##
+##  https://github.com/ZiyadAlmbasher/iam-dangerous-actions/issues?q=state%3Aopen%20label%3A%22Services-to-add%22            ##
+##                                                                                                                           ##       
+##  Risk Label:                                                                                                              ##           
+##  DE = Data Exfiltration                                                                                                   ##   
+##                                                                                                                           ##   
+############################################################################################################################### 
+
+
+# 1 explicit-deny IAM policy in total
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Statement1",
+            "Effect": "Deny",
+            "Action": [
+                "sts:AssumeRole",
+                "sts:AssumeRoleWithSAML",
+                "sts:AssumeRoleWithWebIdentity",
+                "sts:AssumeRoot",
+                "sts:GetFederationToken",
+                "sts:GetServiceBearerToken",
+                "sts:GetSessionToken",
+                "iam:AttachGroupPolicy",
+                "iam:AttachRolePolicy",
+                "iam:AttachUserPolicy",
+                "iam:CreateAccessKey",
+                "iam:CreatePolicyVersion",
+                "iam:CreateUser",
+                "iam:PutGroupPolicy",
+                "iam:PutRolePolicy",
+                "iam:PutUserPolicy",
+                "sso:AttachManagedPolicyToPermissionSet",
+                "sso:PutInlinePolicyToPermissionSet",
+                "sso:PutPermissionsPolicy",
+                "cloudformation:CreateStack",
+                "cloudformation:CreateStackSet",
+                "cloudformation:UpdateStack",
+                "cloudformation:UpdateStackSet",
+                "lambda:CreateFunctionUrlConfig",
+                "lambda:InvokeFunctionUrl",
+                "lambda:UpdateFunctionCode",
+                "lambda:UpdateFunctionUrlConfig",
+                "s3:CreateAccessGrant",
+                "s3:CreateAccessPointForObjectLambda",
+                "s3:CreateJob",
+                "s3:GetObject",
+                "s3:InitiateReplication",
+                "s3:ObjectOwnerOverrideToBucketOwner",
+                "s3:PutAccessGrantsInstanceResourcePolicy",
+                "s3:PutAccessPointConfigurationForObjectLambda",
+                "s3:PutAccessPointPolicy",
+                "s3:PutAccessPointPolicyForObjectLambda",
+                "s3:PutBucketAcl",
+                "s3:PutBucketCORS",
+                "s3:PutBucketPolicy",
+                "s3:PutBucketPublicAccessBlock",
+                "s3:PutBucketWebsite",
+                "s3:PutMultiRegionAccessPointPolicy",
+                "s3:PutObjectAcl",
+                "s3:PutObjectVersionAcl",
+                "s3:ReplicateObject",
+                "s3tables:DeleteTableBucketEncryption",
+                "s3tables:DeleteTableBucketPolicy",
+                "s3tables:GetTableData",
+                "s3tables:PutTableBucketPolicy",
+                "s3tables:PutTableData",
+                "s3tables:PutTablePolicy",
+                "cloudfront:AssociateDistributionWebACL",
+                "cloudfront:CreateDistribution",
+                "cloudfront:CreateFunction",
+                "cloudfront:CreateOriginAccessControl",
+                "cloudfront:DeleteCloudFrontOriginAccessIdentity",
+                "cloudfront:DeleteFieldLevelEncryptionConfig",
+                "cloudfront:DeleteOriginAccessControl",
+                "cloudfront:DisassociateDistributionTenantWebACL",
+                "cloudfront:DisassociateDistributionWebACL",
+                "cloudfront:PublishFunction",
+                "cloudfront:UpdateCloudFrontOriginAccessIdentity",
+                "cloudfront:UpdateDistribution",
+                "cloudfront:UpdateDistributionTenant",
+                "cloudfront:UpdateFieldLevelEncryptionConfig",
+                "cloudfront:UpdateFunction",
+                "cloudfront:UpdateOriginAccessControl",
+                "cloudfront:UpdatePublicKey",
+                "route53:AssociateVPCWithHostedZone",
+                "route53:CreateTrafficPolicyInstance",
+                "route53:DisableHostedZoneDNSSEC",
+                "kms:Decrypt"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}

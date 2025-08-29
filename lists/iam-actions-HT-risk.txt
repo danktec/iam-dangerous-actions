@@ -1,0 +1,82 @@
+###############################################################################################################################
+##  Version 0.1.1                                                                                                            ##
+##  In total: 11 AWS Services, 56 IAM actions, HT risk                                                                       ##   
+##                                                                                                                           ## 
+##  To-do list for additional services:                                                                                      ##
+##  https://github.com/ZiyadAlmbasher/iam-dangerous-actions/issues?q=state%3Aopen%20label%3A%22Services-to-add%22            ##
+##                                                                                                                           ##       
+##  Risk Label:                                                                                                              ##           
+##  HT = Hiding one's Tracks                                                                                                 ##   
+##                                                                                                                           ##   
+##  Note: Direct or primary security risks are not placed in parentheses, whereas indirect or secondary security risks are.  ##
+##                                                                                                                           ##
+############################################################################################################################### 
+
+
+"sts:AssumeRole": (HT)
+"sts:AssumeRoleWithSAML": (HT)
+"sts:AssumeRoleWithWebIdentity": (HT)
+"sts:AssumeRoot": (HT)
+"sts:GetFederationToken": (HT)
+"sts:GetServiceBearerToken": (HT)
+"sts:GetSessionToken": (HT)
+"sts:SetSourceIdentity": HT
+
+"iam:AttachGroupPolicy": (HT)
+"iam:AttachRolePolicy": (HT)
+"iam:AttachUserPolicy": (HT)
+"iam:CreateAccessKey": (HT)
+"iam:CreatePolicyVersion": (HT)
+"iam:CreateUser": (HT)
+"iam:PutGroupPolicy": (HT)
+"iam:PutRolePolicy": (HT) 
+"iam:PutUserPolicy": (HT)
+
+"sso:AttachManagedPolicyToPermissionSet": (HT)
+"sso:PutInlinePolicyToPermissionSet": (HT)
+"sso:PutPermissionsPolicy": (HT)
+
+"sso-directory:UpdateGroup": HT
+"sso-directory:UpdateUserName": HT
+
+"cloudformation:CreateStack": (HT)
+"cloudformation:CreateStackSet": (HT)
+"cloudformation:UpdateStack": (HT)
+"cloudformation:UpdateStackSet": (HT)
+
+"lambda:UpdateFunctionCode": (HT)
+ 
+"config:DeleteEvaluationResults": HT
+"config:DeleteRetentionConfiguration": HT  
+"config:PutRetentionConfiguration": (HT)
+
+"s3:BypassGovernanceRetention": (HT)
+"s3:CreateJob": (HT)
+"s3:DeleteBucket": (HT)
+"s3:DeleteObject": HT 
+"s3:DeleteObjectVersion": HT   
+"s3:PutAccessGrantsInstanceResourcePolicy": (HT) 
+"s3:PutBucketLogging": (HT)
+"s3:PutBucketVersioning": (HT)
+"s3:PutObject": HT 
+"s3:ReplicateDelete": HT 
+
+"s3tables:DeleteNamespace": (HT)
+"s3tables:DeleteTable": (HT)
+"s3tables:DeleteTableBucket": (HT)
+"s3tables:DeleteTableBucketEncryption": (HT)
+"s3tables:PutTableEncryption": (HT)
+
+"cloudfront:CreateFunction": HT
+"cloudfront:DeleteRealtimeLogConfig": HT 
+"cloudfront:PublishFunction": HT
+"cloudfront:UpdateDistribution": (HT)
+"cloudfront:UpdateDistributionTenant": (HT)
+"cloudfront:UpdateFunction": HT
+
+"cloudfront:UpdateRealtimeLogConfig": HT
+
+"cloudtrail:DeleteTrail": HT
+"cloudtrail:PutEventSelectors": HT
+"cloudtrail:StopLogging": HT
+"cloudtrail:UpdateTrail": HT

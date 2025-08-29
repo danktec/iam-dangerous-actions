@@ -1,0 +1,137 @@
+###############################################################################################################################
+##  Version 0.1.1                                                                                                            ##
+##  In total: 10 AWS Services, 112 IAM actions, PE risk                                                                      ##   
+##                                                                                                                           ## 
+##  To-do list for additional services:                                                                                      ##
+##  https://github.com/ZiyadAlmbasher/iam-dangerous-actions/issues?q=state%3Aopen%20label%3A%22Services-to-add%22            ##
+##                                                                                                                           ##       
+##  Risk Label:                                                                                                              ##           
+##  PE = Privilege Escalation                                                                                                ##   
+##                                                                                                                           ##   
+##  Note: Direct or primary security risks are not placed in parentheses, whereas indirect or secondary security risks are.  ##
+##                                                                                                                           ##
+############################################################################################################################### 
+
+
+"sts:AssumeRole": PE 
+"sts:AssumeRoleWithSAML": PE 
+"sts:AssumeRoleWithWebIdentity": PE 
+"sts:AssumeRoot": PE 
+"sts:GetFederationToken": PE 
+"sts:GetServiceBearerToken": PE 
+"sts:GetSessionToken": PE 
+
+"iam:AddClientIDToOpenIDConnectProvider": PE
+"iam:AddRoleToInstanceProfile": (PE)
+"iam:AddUserToGroup": PE
+"iam:AttachGroupPolicy": PE 
+"iam:AttachRolePolicy": PE 
+"iam:AttachUserPolicy": PE 
+"iam:ChangePassword": PE 
+"iam:CreateAccessKey": PE 
+"iam:CreateLoginProfile": PE  
+"iam:CreateOpenIDConnectProvider": PE 
+"iam:CreatePolicy": PE
+"iam:CreatePolicyVersion": PE 
+"iam:CreateRole": PE
+"iam:CreateSAMLProvider": PE 
+"iam:CreateServiceLinkedRole": PE 
+"iam:CreateServiceSpecificCredential": PE
+"iam:CreateUser": PE 
+"iam:DeactivateMFADevice": (PE)  
+"iam:DeleteAccountPasswordPolicy": (PE)  
+"iam:DeleteCloudFrontPublicKey": 
+"iam:DeleteGroupPolicy": (PE) 
+"iam:DeletePolicy": (PE) 
+"iam:DeletePolicyVersion": (PE) 
+"iam:DeleteRolePermissionsBoundary": (PE) 
+"iam:DeleteRolePolicy": (PE) 
+"iam:DeleteUserPermissionsBoundary": (PE) 
+"iam:DeleteUserPolicy": (PE) 
+"iam:DetachGroupPolicy": (PE) 
+"iam:DetachRolePolicy": (PE) 
+"iam:DetachUserPolicy": (PE) 
+"iam:PassRole": PE
+"iam:PutGroupPolicy": PE 
+"iam:PutRolePermissionsBoundary": (PE) 
+"iam:PutRolePolicy": PE 
+"iam:PutUserPermissionsBoundary": (PE) 
+"iam:PutUserPolicy": PE 
+"iam:RemoveUserFromGroup": (PE) 
+"iam:SetDefaultPolicyVersion": PE 
+"iam:UpdateAccessKey": (PE) 
+"iam:UpdateAccountEmailAddress": PE 
+"iam:UpdateAssumeRolePolicy": PE 
+"iam:UpdateGroup": PE
+"iam:UpdateLoginProfile": (PE) 
+"iam:UpdateRole": PE 
+"iam:UpdateSAMLProvider": PE 
+"iam:UpdateSSHPublicKey": (PE) 
+"iam:UpdateUser": PE 
+
+"organizations:AcceptHandshake": PE 
+"organizations:AttachPolicy": PE 
+"organizations:CreateAccount": PE 
+"organizations:CreateGovCloudAccount": PE 
+"organizations:CreateOrganization": PE 
+"organizations:CreateOrganizationalUnit": PE 
+"organizations:CreatePolicy": (PE) 
+"organizations:EnableAllFeatures": PE 
+"organizations:EnablePolicyType": PE 
+"organizations:InviteAccountToOrganization": PE 
+"organizations:LeaveOrganization": PE 
+"organizations:MoveAccount": PE 
+"organizations:PutResourcePolicy": (PE) 
+"organizations:RegisterDelegatedAdministrator": PE 
+"organizations:RemoveAccountFromOrganization": PE 
+"organizations:UpdatePolicy": (PE) 
+
+"sso:AssociateDirectory": PE
+"sso:AssociateProfile": PE
+"sso:AttachCustomerManagedPolicyReferenceToPermissionSet": PE
+"sso:AttachManagedPolicyToPermissionSet": PE 
+"sso:CreateAccountAssignment": PE 
+"sso:CreateApplicationAssignment": PE
+"sso:CreateInstanceAccessControlAttributeConfiguration": PE 
+"sso:CreatePermissionSet": PE 
+"sso:DeletePermissionsBoundaryFromPermissionSet": PE 
+"sso:ProvisionPermissionSet": PE 
+"sso:PutApplicationAccessScope": PE 
+"sso:PutApplicationAssignmentConfiguration": (PE) 
+"sso:PutApplicationGrant": PE 
+"sso:PutInlinePolicyToPermissionSet": PE 
+"sso:PutPermissionsBoundaryToPermissionSet": (PE) 
+"sso:PutPermissionsPolicy": PE 
+"sso:UpdateApplication": PE 
+"sso:UpdateApplicationInstanceResponseConfiguration": PE 
+"sso:UpdateDirectoryAssociation": PE 
+"sso:UpdateInstanceAccessControlAttributeConfiguration": PE 
+"sso:UpdatePermissionSet": (PE) 
+"sso:UpdateSSOConfiguration": PE 
+"sso:UpdateTrustedTokenIssuer": (PE) 
+
+"sso-directory:AddMemberToGroup": PE 
+"sso-directory:CreateBearerToken": PE 
+"sso-directory:CreateExternalIdPConfigurationForDirectory": PE 
+"sso-directory:CreateProvisioningTenant": PE 
+"sso-directory:CreateUser": PE
+"sso-directory:EnableExternalIdPConfigurationForDirectory": PE 
+"sso-directory:EnableUser": PE
+"sso-directory:UpdatePassword": PE
+"sso-directory:UpdateUser": PE 
+
+"cloudformation:CreateStack": PE 
+"cloudformation:CreateStackSet": PE 
+"cloudformation:UpdateStack": PE 
+"cloudformation:UpdateStackSet": PE 
+
+"lambda:AddPermission": PE 
+"lambda:UpdateFunctionCode": PE 
+
+"config:PutConfigRule": PE 
+"config:PutOrganizationConfigRule": PE 
+"config:PutRemediationConfigurations": (PE) 
+
+"s3:AssociateAccessGrantsIdentityCenter": PE
+
+"securityhub:EnableOrganizationAdminAccount": PE  

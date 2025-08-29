@@ -1,0 +1,27 @@
+################################################################################################################################
+##  Version 0.1.1                                                                                                             ##
+##  In total: 16 AWS Services                                                                                                 ##   
+##                                                                                                                            ## 
+##  To-do list for additional services:                                                                                       ##
+##  https://github.com/ZiyadAlmbasher/iam-dangerous-actions/issues?q=state%3Aopen%20label%3A%22Services-to-add%22             ##
+##                                                                                                                            ##           
+################################################################################################################################ 
+
+
+## Current list of AWS Services: 
+sts
+iam
+organizations
+sso 
+sso-directory
+lambda
+cloudformation
+kms
+s3
+s3tables 
+cloudfront 
+securityhub
+route53domains
+route53 
+cloudtrail 
+config

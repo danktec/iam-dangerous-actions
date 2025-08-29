@@ -1,0 +1,22 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "SampleDangerousIAMPolicyDoNotUseInProduction",
+			"Effect": "Allow",
+			"Action": [
+				"iam:*",
+				"lambda:CreateFunction",
+				"sts:AssumeRole",
+				"cloudfront:ListConflictingAliases",
+				"cloudfront:ListAnycastIpLists",
+				"cloudfront:ListDistributions",
+				"s3:*",
+				"ec2:DescribeAccountAttributes",
+				"ec2:DescribeAddresses",
+				"ec2:DescribeImportSnapshotTasks"
+			],
+			"Resource": "*"
+		}
+	]
+}

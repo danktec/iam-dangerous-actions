@@ -1,0 +1,85 @@
+################################################################################################################################
+##  Version 0.1.1                                                                                                             ##
+##  In total: 11 AWS Services, 56 IAM actions, HT risk                                                                        ##   
+##                                                                                                                            ## 
+##  To-do list for additional services:                                                                                       ##
+##  https://github.com/ZiyadAlmbasher/iam-dangerous-actions/issues?q=state%3Aopen%20label%3A%22Services-to-add%22             ##
+##                                                                                                                            ##       
+##  Risk Labels:                                                                                                              ##           
+##  HT = Hiding one's Tracks                                                                                                  ##                              
+##                                                                                                                            ##   
+################################################################################################################################ 
+
+
+# 1 explicit-deny IAM policy in total
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Statement1",
+            "Effect": "Deny",
+            "Action": [
+                "sts:AssumeRole",
+                "sts:AssumeRoleWithSAML",
+                "sts:AssumeRoleWithWebIdentity",
+                "sts:AssumeRoot",
+                "sts:GetFederationToken",
+                "sts:GetServiceBearerToken",
+                "sts:GetSessionToken",
+                "sts:SetSourceIdentity",
+                "iam:AttachGroupPolicy",
+                "iam:AttachRolePolicy",
+                "iam:AttachUserPolicy",
+                "iam:CreateAccessKey",
+                "iam:CreatePolicyVersion",
+                "iam:CreateUser",
+                "iam:PutGroupPolicy",
+                "iam:PutRolePolicy",
+                "iam:PutUserPolicy",
+                "sso:AttachManagedPolicyToPermissionSet",
+                "sso:PutInlinePolicyToPermissionSet",
+                "sso:PutPermissionsPolicy",
+                "sso-directory:UpdateGroup",
+                "sso-directory:UpdateUserName",
+                "cloudformation:CreateStack",
+                "cloudformation:CreateStackSet",
+                "cloudformation:UpdateStack",
+                "cloudformation:UpdateStackSet",
+                "lambda:UpdateFunctionCode",
+                "config:DeleteEvaluationResults",
+                "config:DeleteRetentionConfiguration",
+                "config:PutRetentionConfiguration",
+                "s3:BypassGovernanceRetention",
+                "s3:CreateJob",
+                "s3:DeleteBucket",
+                "s3:DeleteObject",
+                "s3:DeleteObjectVersion",
+                "s3:PutAccessGrantsInstanceResourcePolicy",
+                "s3:PutBucketLogging",
+                "s3:PutBucketVersioning",
+                "s3:PutObject",
+                "s3:ReplicateDelete",
+                "s3tables:DeleteNamespace",
+                "s3tables:DeleteTable",
+                "s3tables:DeleteTableBucket",
+                "s3tables:DeleteTableBucketEncryption",
+                "s3tables:PutTableEncryption",
+                "cloudfront:CreateFunction",
+                "cloudfront:DeleteRealtimeLogConfig",
+                "cloudfront:PublishFunction",
+                "cloudfront:UpdateDistribution",
+                "cloudfront:UpdateDistributionTenant",
+                "cloudfront:UpdateFunction",
+                "cloudfront:UpdateRealtimeLogConfig",
+                "cloudtrail:DeleteTrail",
+                "cloudtrail:PutEventSelectors",
+                "cloudtrail:StopLogging",
+                "cloudtrail:UpdateTrail"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}

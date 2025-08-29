@@ -1,0 +1,435 @@
+################################################################################################################################
+##  Version 0.1.1                                                                                                             ##
+##  In total: 16 AWS Services, 401 IAM actions, all security risks                                                            ##   
+##                                                                                                                            ## 
+##  To-do list for additional services:                                                                                       ##
+##  https://github.com/ZiyadAlmbasher/iam-dangerous-actions/issues?q=state%3Aopen%20label%3A%22Services-to-add%22             ##
+##                                                                                                                            ##       
+##  Risk Labels:                                                                                                              ##           
+##  PE = Privilege Escalation                                                                                                 ##
+##  DC = Disabling or evasion of Security Controls                                                                            ##   
+##  DE = Data Exfiltration                                                                                                    ##       
+##  HT = Hiding one's Tracks                                                                                                  ##   
+##  NA = Not Applicable. The action will be dangerous when combined with other IAM actions                                    ##           
+##                                                                                                                            ##   
+##  Note: Direct or primary security risks are not placed in parentheses, whereas indirect or secondary security risks are.   ##
+##                                                                                                                            ##      
+################################################################################################################################ 
+
+
+"sts:AssumeRole": PE, (DC, DE, HT)
+"sts:AssumeRoleWithSAML": PE, (DC, DE, HT)
+"sts:AssumeRoleWithWebIdentity": PE, (DC, DE, HT)
+"sts:AssumeRoot": PE, (DC, DE, HT)
+"sts:GetFederationToken": PE, (DC, DE, HT)
+"sts:GetServiceBearerToken": PE, (DC, DE, HT)
+"sts:GetSessionToken": PE, (DC, DE, HT)
+"sts:SetSourceIdentity": HT
+
+"iam:AddClientIDToOpenIDConnectProvider": PE
+"iam:AddRoleToInstanceProfile": (PE, DC)
+"iam:AddUserToGroup": PE
+"iam:AttachGroupPolicy": PE, (DC, DE, HT)
+"iam:AttachRolePolicy": PE, (DC, DE, HT)
+"iam:AttachUserPolicy": PE, (DC, DE, HT)
+"iam:ChangePassword": PE, DC
+"iam:CreateAccessKey": PE, (DC, DE, HT)
+"iam:CreateGroup": NA
+"iam:CreateLoginProfile": PE, (DC) 
+"iam:CreateOpenIDConnectProvider": PE, (DC)
+"iam:CreatePolicy": PE
+"iam:CreatePolicyVersion": PE, (DC, DE, HT)
+"iam:CreateRole": PE
+"iam:CreateSAMLProvider": PE, (DC)
+"iam:CreateServiceLinkedRole": PE 
+"iam:CreateServiceSpecificCredential": PE
+"iam:CreateUser": PE, (DC, DE, HT)
+"iam:CreateVirtualMFADevice": NA
+"iam:DeactivateMFADevice": DC, (PE) 
+"iam:DeleteAccessKey": DC
+"iam:DeleteAccountPasswordPolicy": DC, (PE) 
+"iam:DeleteCloudFrontPublicKey": DC
+"iam:DeleteGroup": DC
+"iam:DeleteGroupPolicy": DC, (PE)
+"iam:DeleteLoginProfile": DC
+"iam:DeleteOpenIDConnectProvider": DC
+"iam:DeletePolicy": DC, (PE)
+"iam:DeletePolicyVersion": DC, (PE)
+"iam:DeleteRole": DC
+"iam:DeleteRolePermissionsBoundary": DC, (PE)
+"iam:DeleteRolePolicy": DC, (PE)
+"iam:DeleteSAMLProvider": DC
+"iam:DeleteSSHPublicKey": DC
+"iam:DeleteServerCertificate": DC
+"iam:DeleteServiceLinkedRole": DC
+"iam:DeleteServiceSpecificCredential": DC
+"iam:DeleteSigningCertificate": DC
+"iam:DeleteUser": DC
+"iam:DeleteUserPermissionsBoundary": DC, (PE)
+"iam:DeleteUserPolicy": DC, (PE)
+"iam:DeleteVirtualMFADevice": DC
+"iam:DetachGroupPolicy": DC, (PE)
+"iam:DetachRolePolicy": DC, (PE)
+"iam:DetachUserPolicy": DC, (PE)
+"iam:DisableOrganizationsRootCredentialsManagement": DC
+"iam:DisableOrganizationsRootSessions": DC
+"iam:EnableMFADevice": NA 
+"iam:EnableOrganizationsRootCredentialsManagement": DC 
+"iam:EnableOrganizationsRootSessions": DC
+"iam:PassRole": PE
+"iam:PutGroupPolicy": PE, (DC, DE, HT)
+"iam:PutRolePermissionsBoundary": DC, (PE)
+"iam:PutRolePolicy": PE, (DC, DE, HT)
+"iam:PutUserPermissionsBoundary": DC, (PE)
+"iam:PutUserPolicy": PE, (DC, DE, HT)
+"iam:RemoveClientIDFromOpenIDConnectProvider": DC
+"iam:RemoveUserFromGroup": DC, (PE)
+"iam:ResetServiceSpecificCredential": DC
+"iam:SetDefaultPolicyVersion": PE, (DC)
+"iam:SetSTSRegionalEndpointStatus": DC
+"iam:SetSecurityTokenServicePreferences": DC
+"iam:UpdateAccessKey": DC, (PE)
+"iam:UpdateAccountEmailAddress": PE, (DC)
+"iam:UpdateAccountPasswordPolicy": DC
+"iam:UpdateAssumeRolePolicy": PE, (DC)
+"iam:UpdateCloudFrontPublicKey": DC
+"iam:UpdateGroup": PE
+"iam:UpdateLoginProfile": DC, (PE)
+"iam:UpdateOpenIDConnectProviderThumbprint": DC
+"iam:UpdateRole": PE, (DC)
+"iam:UpdateSAMLProvider": PE, (DC)
+"iam:UpdateSSHPublicKey": DC, (PE)
+"iam:UpdateServerCertificate": DC
+"iam:UpdateServiceSpecificCredential": DC
+"iam:UpdateSigningCertificate": DC
+"iam:UpdateUser": PE, (DC)
+"iam:UploadCloudFrontPublicKey": DC
+"iam:UploadSSHPublicKey": NA
+"iam:UploadServerCertificate": DC
+"iam:UploadSigningCertificate": DC
+
+"organizations:AcceptHandshake": PE, (DC)
+"organizations:AttachPolicy": PE, (DC)
+"organizations:CancelHandshake": DC
+"organizations:CreateAccount": PE, (DC)
+"organizations:CreateGovCloudAccount": PE, (DC)
+"organizations:CreateOrganization": PE, (DC)
+"organizations:CreateOrganizationalUnit": PE, (DC)
+"organizations:CreatePolicy": DC, (PE)
+"organizations:DeleteOrganization": DC
+"organizations:DeleteOrganizationalUnit": DC
+"organizations:DeletePolicy": DC
+"organizations:DeleteResourcePolicy": DC
+"organizations:DeregisterDelegatedAdministrator": DC
+"organizations:DetachPolicy": DC
+"organizations:DisableAWSServiceAccess": DC
+"organizations:DisablePolicyType": DC
+"organizations:EnableAllFeatures": PE, (DC)
+"organizations:EnablePolicyType": PE, (DC)
+"organizations:InviteAccountToOrganization": PE, (DC)
+"organizations:LeaveOrganization": PE, (DC)
+"organizations:MoveAccount": PE, (DC)
+"organizations:PutResourcePolicy": DC, (PE)
+"organizations:RegisterDelegatedAdministrator": PE, (DC)
+"organizations:RemoveAccountFromOrganization": PE, (DC)
+"organizations:UpdateOrganizationalUnit": DC
+"organizations:UpdatePolicy": DC, (PE)
+
+"sso:AssociateDirectory": PE
+"sso:AssociateProfile": PE
+"sso:AttachCustomerManagedPolicyReferenceToPermissionSet": PE
+"sso:AttachManagedPolicyToPermissionSet": PE, (DC, DE, HT)
+"sso:CreateAccountAssignment": PE, (DC)
+"sso:CreateApplicationAssignment": PE
+"sso:CreateApplicationInstanceCertificate": DC
+"sso:CreateInstanceAccessControlAttributeConfiguration": PE, (DC)
+"sso:CreatePermissionSet": PE, (DC)
+"sso:CreateTrust": DC
+"sso:CreateTrustedTokenIssuer": DC
+"sso:DeleteAccountAssignment": DC
+"sso:DeleteApplication": DC
+"sso:DeleteApplicationAccessScope": DC
+"sso:DeleteApplicationAssignment": DC
+"sso:DeleteApplicationAuthenticationMethod": DC
+"sso:DeleteApplicationGrant": DC
+"sso:DeleteApplicationInstance": DC
+"sso:DeleteApplicationInstanceCertificate": DC
+"sso:DeleteInlinePolicyFromPermissionSet": DC
+"sso:DeleteInstance": DC
+"sso:DeleteInstanceAccessControlAttributeConfiguration": DC
+"sso:DeleteManagedApplicationInstance": DC
+"sso:DeletePermissionSet": DC
+"sso:DeletePermissionsBoundaryFromPermissionSet": PE, (DC)
+"sso:DeletePermissionsPolicy": DC
+"sso:DeleteProfile": DC
+"sso:DeleteTrustedTokenIssuer": DC
+"sso:DetachCustomerManagedPolicyReferenceFromPermissionSet": DC
+"sso:DetachManagedPolicyFromPermissionSet": DC
+"sso:DisassociateDirectory": DC
+"sso:DisassociateProfile": DC
+"sso:ImportApplicationInstanceServiceProviderMetadata": DC
+"sso:ProvisionPermissionSet": PE, (DC)
+"sso:PutApplicationAccessScope": PE, (DC)
+"sso:PutApplicationAssignmentConfiguration": DC, (PE)
+"sso:PutApplicationAuthenticationMethod": DC
+"sso:PutApplicationGrant": PE, (DC)
+"sso:PutInlinePolicyToPermissionSet": PE, (DC, DE, HT)
+"sso:PutMfaDeviceManagementForDirectory": DC
+"sso:PutPermissionsBoundaryToPermissionSet": DC, (PE)
+"sso:PutPermissionsPolicy": PE, (DC, DE, HT)
+"sso:UpdateApplication": PE, (DC)
+"sso:UpdateApplicationInstanceActiveCertificate": DC
+"sso:UpdateApplicationInstanceResponseConfiguration": PE, (DC)
+"sso:UpdateApplicationInstanceResponseSchemaConfiguration": DC
+"sso:UpdateApplicationInstanceSecurityConfiguration": DC
+"sso:UpdateApplicationInstanceServiceProviderConfiguration": DC
+"sso:UpdateApplicationInstanceStatus": DC
+"sso:UpdateDirectoryAssociation": PE, (DC)
+"sso:UpdateInstanceAccessControlAttributeConfiguration": PE, (DC)
+"sso:UpdateManagedApplicationInstanceStatus": DC
+"sso:UpdatePermissionSet": DC, (PE)
+"sso:UpdateProfile": DC
+"sso:UpdateSSOConfiguration": PE, (DC)
+"sso:UpdateTrust": DC
+"sso:UpdateTrustedTokenIssuer": DC, (PE)
+
+"sso-directory:AddMemberToGroup": PE
+"sso-directory:CompleteVirtualMfaDeviceRegistration": DC
+"sso-directory:CompleteWebAuthnDeviceRegistration": DC
+"sso-directory:CreateBearerToken": PE, (DC)
+"sso-directory:CreateExternalIdPConfigurationForDirectory": PE, (DC)
+"sso-directory:CreateGroup": NA
+"sso-directory:CreateProvisioningTenant": PE, (DC)
+"sso-directory:CreateUser": PE
+"sso-directory:DeleteExternalIdPCertificate": DC
+"sso-directory:DeleteExternalIdPConfigurationForDirectory": DC
+"sso-directory:DeleteGroup": DC
+"sso-directory:DeleteMfaDeviceForUser": DC
+"sso-directory:DeleteProvisioningTenant": DC
+"sso-directory:DeleteUser": DC
+"sso-directory:DisableExternalIdPConfigurationForDirectory": DC
+"sso-directory:DisableUser": DC
+"sso-directory:EnableExternalIdPConfigurationForDirectory": PE, (DC)
+"sso-directory:EnableUser": PE
+"sso-directory:ImportExternalIdPCertificate": DC
+"sso-directory:RemoveMemberFromGroup": DC
+"sso-directory:StartVirtualMfaDeviceRegistration": NA
+"sso-directory:StartWebAuthnDeviceRegistration": NA
+"sso-directory:UpdateExternalIdPConfigurationForDirectory": DC
+"sso-directory:UpdateGroup": HT
+"sso-directory:UpdateMfaDeviceForUser": DC
+"sso-directory:UpdatePassword": PE
+"sso-directory:UpdateUser": PE, (DC)
+"sso-directory:UpdateUserName": HT
+
+"cloudformation:CreateStack": PE, (DC, DE, HT)
+"cloudformation:CreateStackSet": PE, (DC, DE, HT)
+"cloudformation:DeactivateOrganizationsAccess": DC
+"cloudformation:DeleteStack": DC
+"cloudformation:DeleteStackSet": DC
+"cloudformation:ImportStacksToStackSet": DC
+"cloudformation:SetStackPolicy": DC
+"cloudformation:UpdateStack": PE, (DC, DE, HT)
+"cloudformation:UpdateStackSet": PE, (DC, DE, HT)
+
+"lambda:AddLayerVersionPermission": DC
+"lambda:AddPermission": PE, (DC)
+"lambda:CreateCodeSigningConfig": DC
+"lambda:CreateFunction": NA
+"lambda:CreateFunctionUrlConfig": DC, (DE)
+"lambda:DeleteCodeSigningConfig": DC
+"lambda:DeleteFunctionCodeSigningConfig": DC
+"lambda:DeleteFunctionUrlConfig": DC
+"lambda:DeleteLayerVersion": DC  
+"lambda:InvokeFunctionUrl": DE
+"lambda:PublishLayerVersion": DC  
+"lambda:PublishVersion": NA
+"lambda:PutFunctionCodeSigningConfig": DC
+"lambda:PutFunctionEventInvokeConfig": DC
+"lambda:PutFunctionRecursionConfig": DC
+"lambda:RemoveLayerVersionPermission": DC
+"lambda:RemovePermission": DC
+"lambda:UpdateCodeSigningConfig": DC
+"lambda:UpdateFunctionCode": PE, (DC, DE, HT)
+"lambda:UpdateFunctionCodeSigningConfig": DC
+"lambda:UpdateFunctionConfiguration": DC
+"lambda:UpdateFunctionEventInvokeConfig": DC
+"lambda:UpdateFunctionUrlConfig": DC, (DE)
+
+"config:DeleteAggregationAuthorization": DC
+"config:DeleteConfigRule": DC
+"config:DeleteConfigurationAggregator": DC
+"config:DeleteConfigurationRecorder": DC
+"config:DeleteDeliveryChannel": DC
+"config:DeleteEvaluationResults": HT
+"config:DeleteOrganizationConfigRule": DC
+"config:DeletePendingAggregationRequest": DC
+"config:DeleteRemediationConfiguration": DC
+"config:DeleteRemediationExceptions": DC
+"config:DeleteRetentionConfiguration": HT
+"config:DeleteServiceLinkedConfigurationRecorder": DC
+"config:PutConfigRule": PE, (DC)
+"config:PutConfigurationAggregator": DC
+"config:PutConfigurationRecorder": DC
+"config:PutDeliveryChannel": DC
+"config:PutOrganizationConfigRule": PE, (DC)
+"config:PutRemediationConfigurations": DC, (PE)
+"config:PutRetentionConfiguration": DC, (HT)
+"config:StopConfigurationRecorder": DC
+
+"s3:AssociateAccessGrantsIdentityCenter": PE
+"s3:BypassGovernanceRetention": DC, (HT)
+"s3:CreateAccessGrant": DE
+"s3:CreateAccessGrantsInstance": NA
+"s3:CreateAccessGrantsLocation": NA
+"s3:CreateAccessPoint": NA
+"s3:CreateAccessPointForObjectLambda": DE
+"s3:CreateJob": DE, (DC, HT)
+"s3:CreateMultiRegionAccessPoint": NA
+"s3:DeleteAccessGrant": DC
+"s3:DeleteAccessGrantsInstance": DC
+"s3:DeleteAccessGrantsInstanceResourcePolicy": DC
+"s3:DeleteAccessGrantsLocation": DC
+"s3:DeleteAccessPoint": DC
+"s3:DeleteAccessPointPolicy": DC
+"s3:DeleteAccessPointPolicyForObjectLambda": DC
+"s3:DeleteBucket": DC, (HT)
+"s3:DeleteBucketPolicy": DC
+"s3:DeleteBucketWebsite": DC
+"s3:DeleteMultiRegionAccessPoint": DC
+"s3:DeleteObject": HT, (DC)
+"s3:DeleteObjectVersion": HT, (DC)
+"s3:DissociateAccessGrantsIdentityCenter": DC
+"s3:GetObject": DE
+"s3:InitiateReplication": DE, (DC)
+"s3:ObjectOwnerOverrideToBucketOwner": DC, (DE)
+"s3:PutAccessGrantsInstanceResourcePolicy": DC, (DE, HT)
+"s3:PutAccessPointConfigurationForObjectLambda": DE, (DC)
+"s3:PutAccessPointPolicy": DC, (DE)
+"s3:PutAccessPointPolicyForObjectLambda": DE, (DC)
+"s3:PutAccessPointPublicAccessBlock": DC
+"s3:PutAccountPublicAccessBlock": DC
+"s3:PutBucketAcl": DC, (DE)
+"s3:PutBucketCORS": DC, (DE)
+"s3:PutBucketLogging": DC, (HT)
+"s3:PutBucketObjectLockConfiguration": DC
+"s3:PutBucketOwnershipControls": DC
+"s3:PutBucketPolicy": DE, (DC)
+"s3:PutBucketPublicAccessBlock": DC, (DE)
+"s3:PutBucketVersioning": DC, (HT)
+"s3:PutBucketWebsite": DE, (DC)
+"s3:PutEncryptionConfiguration": DC
+"s3:PutInventoryConfiguration": NA
+"s3:PutMultiRegionAccessPointPolicy": DE, (DC)
+"s3:PutObject": HT, (DC)
+"s3:PutObjectAcl": DE, (DC)
+"s3:PutObjectLegalHold": DC
+"s3:PutObjectVersionAcl": DE, (DC)
+"s3:ReplicateDelete": HT, (DC)
+"s3:ReplicateObject": DE
+"s3:UpdateAccessGrantsLocation": DC
+
+"s3tables:DeleteNamespace": DC, (HT)
+"s3tables:DeleteTable": DC, (HT)
+"s3tables:DeleteTableBucket": DC, (HT)
+"s3tables:DeleteTableBucketEncryption": DC, (DE, HT)
+"s3tables:DeleteTableBucketPolicy": DC, (DE)
+"s3tables:DeleteTablePolicy": DC
+"s3tables:GetTableData": DE 
+"s3tables:PutTableBucketEncryption": DC
+"s3tables:PutTableBucketPolicy": DC, (DE)
+"s3tables:PutTableData": DE
+"s3tables:PutTableEncryption": DC, (HT)
+"s3tables:PutTablePolicy": DC, (DE)
+
+"cloudfront:AssociateDistributionTenantWebACL": DC
+"cloudfront:AssociateDistributionWebACL": DC, (DE)
+"cloudfront:CreateCloudFrontOriginAccessIdentity": NA
+"cloudfront:CreateConnectionGroup": NA
+"cloudfront:CreateDistribution": DC, DE
+"cloudfront:CreateDistributionTenant": NA
+"cloudfront:CreateFieldLevelEncryptionProfile": NA 
+"cloudfront:CreateFunction": DC, DE, HT
+"cloudfront:CreateKeyGroup": DC
+"cloudfront:CreateKeyValueStore": DC
+"cloudfront:CreateOriginAccessControl": DC, (DE)
+"cloudfront:CreateOriginRequestPolicy": NA
+"cloudfront:CreatePublicKey": NA
+"cloudfront:CreateVpcOrigin": DC
+"cloudfront:DeleteCloudFrontOriginAccessIdentity": DC, (DE)
+"cloudfront:DeleteDistribution": DC
+"cloudfront:DeleteFieldLevelEncryptionConfig": DC, DE
+"cloudfront:DeleteFieldLevelEncryptionProfile": DC
+"cloudfront:DeleteFunction": DC
+"cloudfront:DeleteKeyGroup": DC
+"cloudfront:DeleteKeyValueStore": DC 
+"cloudfront:DeleteOriginAccessControl": DC, DE
+"cloudfront:DeletePublicKey": DC
+"cloudfront:DeleteRealtimeLogConfig": DC, HT 
+"cloudfront:DisassociateDistributionTenantWebACL": DC, DE
+"cloudfront:DisassociateDistributionWebACL": DC, DE
+"cloudfront:PublishFunction": DC, DE, HT
+"cloudfront:UpdateCloudFrontOriginAccessIdentity": DC, (DE)
+"cloudfront:UpdateConnectionGroup": DC
+"cloudfront:UpdateDistribution": DC, DE, (HT)
+"cloudfront:UpdateDistributionTenant": DC, (DE, HT)
+"cloudfront:UpdateDomainAssociation": DC
+"cloudfront:UpdateFieldLevelEncryptionConfig": DC, DE
+"cloudfront:UpdateFunction": DC, DE, HT
+"cloudfront:UpdateOriginAccessControl": DC, DE
+"cloudfront:UpdateOriginRequestPolicy": DC
+"cloudfront:UpdatePublicKey": DC, (DE)
+"cloudfront:UpdateRealtimeLogConfig": DC, HT
+"cloudfront:UpdateResponseHeadersPolicy": DC
+
+"securityhub:BatchDeleteAutomationRules": DC
+"securityhub:BatchDisableStandards": DC
+"securityhub:DeleteActionTarget": DC
+"securityhub:DeleteAggregatorV2": DC
+"securityhub:DeleteAutomationRuleV2": DC
+"securityhub:DeleteConfigurationPolicy": DC
+"securityhub:DeleteConnectorV2": DC
+"securityhub:DeleteMembers": DC
+"securityhub:DisableImportFindingsForProduct": DC
+"securityhub:DisableOrganizationAdminAccount": DC
+"securityhub:DisableSecurityHub": DC
+"securityhub:DisableSecurityHubV2": DC
+"securityhub:DisassociateFromAdministratorAccount": DC
+"securityhub:DisassociateFromMasterAccount": DC
+"securityhub:DisassociateMembers": DC
+"securityhub:EnableOrganizationAdminAccount": PE, DC 
+"securityhub:UpdateFindingAggregator": DC
+"securityhub:UpdateOrganizationConfiguration": DC
+"securityhub:UpdateSecurityControl": DC
+"securityhub:UpdateSecurityHubConfiguration": DC
+"securityhub:UpdateStandardsControl": DC
+
+"route53:AssociateVPCWithHostedZone": DC, (DE)
+"route53:CreateHostedZone": NA
+"route53:CreateTrafficPolicy": DC
+"route53:CreateTrafficPolicyInstance": DC, (DE)
+"route53:CreateTrafficPolicyVersion": DC
+"route53:DeactivateKeySigningKey": DC
+"route53:DeleteHostedZone": DC
+"route53:DeleteReusableDelegationSet": DC
+"route53:DeleteTrafficPolicy": DC
+"route53:DeleteTrafficPolicyInstance": DC
+"route53:DeleteVPCAssociationAuthorization": DC
+"route53:DisableHostedZoneDNSSEC": DC, (DE)
+"route53:DisassociateVPCFromHostedZone": DC
+
+"route53domains:RegisterDomain": DC
+"route53domains:RetrieveDomainAuthCode": DC
+
+"kms:Decrypt": DE
+"kms:DeleteCustomKeyStore": DC
+"kms:DeleteImportedKeyMaterial": DC
+"kms:GenerateDataKey": NA
+"kms:GenerateDataKeyPair": NA
+"kms:ScheduleKeyDeletion": DC
+"kms:UpdateCustomKeyStore": DC
+
+"cloudtrail:DeleteTrail": HT
+"cloudtrail:PutEventSelectors": HT
+"cloudtrail:StopLogging": HT
+"cloudtrail:UpdateTrail": HT
