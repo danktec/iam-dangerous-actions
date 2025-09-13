@@ -5,7 +5,7 @@
 ##  To-do list for additional services:                                                                                      ##
 ##  https://github.com/ZiyadAlmbasher/iam-dangerous-actions/issues?q=state%3Aopen%20label%3A%22Services-to-add%22            ##
 ##                                                                                                                           ##       
-##  Risk Label:                                                                                                              ##           
+##  Security Risk Label:                                                                                                     ##           
 ##  PE = Privilege Escalation                                                                                                ##   
 ##                                                                                                                           ##   
 ##  Note: Direct or primary security risks are not placed in parentheses, whereas indirect or secondary security risks are.  ##
