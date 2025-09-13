@@ -1,8 +1,8 @@
 # Draft mode: examples only                                         
-## Completed tool will be done under "iam-security-risks"            
+## The completed tool will be done under "iam-security-risks"            
 
 
-### Risk Labels: 
+### Security Risk Labels: 
 PE = Privilege Escalation                     
 DC = Disabling or evasion of Security Controls     
 DE = Data Exfiltration                             
@@ -24,7 +24,7 @@ Note: Direct or primary security risks are not placed in parentheses, whereas in
 "sts:AssumeRole": PE, (DC, DE, HT)
 
 
-### Evaluation Logic examples: 
+### Evaluation Logic Examples: 
 
 1) Out of all the IAM Roles present in the AWS Account, identify and highlight a high-security risk of DE if the following 
 IAM actions are present in the combined policies of an IAM Role: 
@@ -35,8 +35,7 @@ IAM actions are present in the combined policies of an IAM Role:
    "S3:GetObject"
    ```
 
-2) Identify and highlight the critical security risks of PE, DE, HT, and DC if the following IAM actions are collectively present within any
-IAM Roles in the account:
+2) Identify and highlight the critical security risks of PE, DE, HT, and DC if the following IAM actions are collectively present within any IAM Roles in the account:
 
    ```
    "iam:CreateRole",                
