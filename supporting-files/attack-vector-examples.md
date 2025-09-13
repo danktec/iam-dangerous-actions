@@ -12,6 +12,7 @@ Note: Direct or primary security risks are not placed in parentheses, whereas in
 
 
 ### Actions with risk labels applied: 
+```
 "iam:PassRole": PE
 "lambda:CreateFunction": NA
 "S3:GetObject": DE
@@ -22,12 +23,11 @@ Note: Direct or primary security risks are not placed in parentheses, whereas in
 "iam:UpdateAssumeRolePolicy": PE, (DC)
 "lambda:UpdateFunctionCode": PE, (DC, DE, HT)
 "sts:AssumeRole": PE, (DC, DE, HT)
-
+```
 
 ### Evaluation Logic Examples: 
 
-1) Out of all the IAM Roles present in the AWS Account, identify and highlight a high-security risk of DE if the following 
-IAM actions are present in the combined policies of an IAM Role: 
+1) Out of all the IAM Roles in the AWS Account, identify and highlight a high-security risk of DE if the following IAM actions are present in the combined policies attached to any individual IAM Role:
 
    ```
    "iam:PassRole"
