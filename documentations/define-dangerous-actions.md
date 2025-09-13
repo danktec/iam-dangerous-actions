@@ -1,10 +1,8 @@
-
 # What is the difference between "dangerous" and "high privilege" actions? 
-
 
 In this context, we define **high-privilege** actions as those that have a significant impact and wide scope. 
 
-Examples include Admin policies, or policies containing many services with wildcards, such as `"iam:*", "Lambda:*", and "sso:*"`. 
+Examples include Admin policies, or policies containing many services with wildcards, such as `"iam:*"`, `"lambda:*"`, and `"sso:*"`. 
 
 Although **dangerous** IAM actions are inherently part of high-privilege actions, they differ in the following characteristics:
 
