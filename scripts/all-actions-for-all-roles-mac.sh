@@ -1,4 +1,4 @@
-## Author: David Kerber, with AI code enhancements for processing and error handling.
+## Author: David Kerber, with some AI code changes.
 ## Usage: sh all-actions-for-all-roles-mac.sh 
 
 
